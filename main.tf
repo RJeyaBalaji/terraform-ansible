@@ -132,7 +132,7 @@ output "server_public_ip" {
 }
 
 resource "aws_instance" "app-server" {
-  ami = "ami-053b0d53c279acc90"
+  ami = "ami-024e6efaf93d85776"
   instance_type = "t2.micro"
   availability_zone = "us-east-2a"  //reason to hardcode avail zone so that subnet & interface will be in same zone
   key_name = "18072023"
