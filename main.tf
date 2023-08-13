@@ -7,7 +7,7 @@
   }
 }
 provider "aws" {
-  region = "us-east-1"
+  region = "us-east-2"
 }
 
 
@@ -50,7 +50,7 @@ resource "aws_route_table" "pubrt" {
 resource "aws_subnet" "pubsub" {
   vpc_id     = aws_vpc.my-vpc.id
   cidr_block = "10.0.1.0/24"
-  availability_zone = "us-east-1a"
+  availability_zone = "us-east-2a"
 
   tags = {
     Name = "MY-VPC-PUB-SUB"
@@ -134,7 +134,7 @@ output "server_public_ip" {
 resource "aws_instance" "app-server" {
   ami = "ami-053b0d53c279acc90"
   instance_type = "t2.micro"
-  availability_zone = "us-east-1a"  //reason to hardcode avail zone so that subnet & interface will be in same zone
+  availability_zone = "us-east-2a"  //reason to hardcode avail zone so that subnet & interface will be in same zone
   key_name = "18072023"
 
   network_interface {
